@@ -1,0 +1,38 @@
+# 날짜와 관련된 메서드
+
+* getFullYear()이란?
+  - getFullYear() 메서드는 주어진 날짜의 현지 시간 기준 연도를 반환합니다.
+  
+  예시)
+  const moonLanding = new Date();
+  
+  console.log(moonLanding.getFullYear()); // 2020(현재 시각 기준)
+  
+* new Date()
+  - Date 객체는 생성자 함수이다. Date 생성자 함수는 날짜와 시간을 가지는 인스턴스를 생성한다. 생성된 인스턴스는 기본적으로 현재 날짜와
+    시간을 나타내는 값을 가진다. 현재 날짜와 시간이 아닌 다른 날짜를 다루고 싶은 경우, Date 생성자 함수에 명시적으로 해당 날짜와 시간 정보를 인수로 지정한다.
+    Date 생성자 함수로 객체를 생성하는 방법은 4가지가 있다.
+    
+    1. new Date() = 인수를 전달하지 않으면 현재 날짜와 시간을 가지는 인스턴스를 반환한다.
+    ex) const date = new Date();
+        console.log(date); // Sat Aug 22 2020 16:18:30 GMT+0900 (대한민국 표준시)______현재 시각을 표시
+    
+    2. new Date(milliseconds) = 인수로 숫자 타입의 밀리초를 전달하면 1970년 1월 1일 00:00(UTC)을 기점으로 인수로 전달된 밀리초만큼 경과한 날짜와 시간을 가지는 인스턴스를 반환한다.
+    ex) //KST(Korea Standard Time)는 GMT(그리니치 평균시: Greenwich Mean Time)에 9시간을 더한 시간이다.
+        let date = new Date(0);
+        console.log(date); // Thu Jan 01 1970 09:00:00 GMT+0900 (한국 표준시)
+        
+        // 86400000ms는 1day를 의미한다.
+        date = new Date(86400000);
+        console.log(date); // Fri Jan 02 1970 09:00:00 GMT+0900 (한국표준시)
+    
+    3. new Date(datestring) = 인수로 날짜와 시간을 나타내는 문자열을 전달하면 지정된 날짜와 시간을 가지는 인스턴스를 반환한다. 이때 인수로 전달한 문자열은 Date.parse 메소드에 의해
+                              해석 가능한 형식이어야한다.
+    ex) let date = new Date('May 16, 2019 17:22:10');
+    console.log(date); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+    
+    date = new Date('2019/05/16/17:22:10');
+    console.log(date); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+    
+    그 밖의 내용은 하기 링크 참조
+        
