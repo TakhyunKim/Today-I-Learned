@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="KimTakhyun" content="width=device-width, initial-scale=1.0">
+    <title>농구 게임 만들기</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- js 변화가 될 요소들에 한해서 id로 지정 -->
+    <div class="div_scoreboard">
+        <div class="div_scoreboard_inner">
+            <div class="div_shots_left">
+                <span>남은 슛 횟수</span>
+                <span id="shots_left">15</span>
+            </div>
+            <div class="div_score">
+                <div class="div_score_name">컴퓨터</div>
+                <div id="computer_score" class="div_score_number">0</div>
+            </div>
+            <div class="div_score">
+                <div class="div_score_name">사용자</div>
+                <div id="user_score" class="div_score_number">0</div>
+            </div>
+            <div id="text">컴퓨터부터 시작합니다!</div>
+        </div>
+    </div>
+
+    <div class="div_control_panel">
+        <div id="div_computer" class="div_panel">
+            <div class="div_control_name">컴퓨터</div>
+            <button class="btn_computer" onclick="onComputerShoot()">슛하기</button>
+        </div>
+        <div id="div_user" class="div_panel">
+            <div class="div_control_name">사용자</div>
+            <button class="btn_user" onclick="onUserShoot(2)">2점슛</button>
+            <button class="btn_user" onclick="onUserShoot(3)">3점슛</button>
+        </div>
+    </div>
+</body>
+</html>
